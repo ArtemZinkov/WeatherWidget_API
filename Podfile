@@ -7,4 +7,5 @@ target 'WeatherWidget_API' do
 
   # Pods for WeatherWidget_API
   pod 'Alamofire'
+  pod 'SwiftyJSON'
 end
