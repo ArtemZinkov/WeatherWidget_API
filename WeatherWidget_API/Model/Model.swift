@@ -53,5 +53,8 @@ struct WeatherModel {
         }
         return descriptionString
     }
-
+    
+    func getRequestAdress() -> String {
+        return Constants.APIAdress + "?lat=" + String(WeatherModel.currentLocation.lat) + "&lon=" + String(WeatherModel.currentLocation.lon) + "&appid=" + Constants.APIkeys[Constants.APIkeys.count.Random()]
+    }
 }

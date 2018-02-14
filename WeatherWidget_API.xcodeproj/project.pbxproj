@@ -12,8 +12,10 @@
 		AC05A13E202710A200C5E135 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC05A13C202710A200C5E135 /* Main.storyboard */; };
 		AC05A140202710A200C5E135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC05A13F202710A200C5E135 /* Assets.xcassets */; };
 		AC05A143202710A200C5E135 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC05A141202710A200C5E135 /* LaunchScreen.storyboard */; };
+		AC0CDC182030BC5000AAB836 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0CDC172030BC4F00AAB836 /* Controller.swift */; };
+		AC505BE02032046F00842C56 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC505BDF2032046F00842C56 /* Model.swift */; };
 		ACADE884202CE1D5008D59C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADE883202CE1D5008D59C4 /* ViewController.swift */; };
-		ACBF7D15202F408500660123 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBF7D13202F408500660123 /* Data.swift */; };
+		ACBF7D15202F408500660123 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBF7D13202F408500660123 /* Constants.swift */; };
 		ACBF7D16202F408500660123 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBF7D14202F408500660123 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,9 +28,11 @@
 		AC05A13F202710A200C5E135 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC05A142202710A200C5E135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC05A144202710A200C5E135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC0CDC172030BC4F00AAB836 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		AC505BDF2032046F00842C56 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		ACADE883202CE1D5008D59C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ACBF7D13202F408500660123 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data.swift; path = WeatherWidget_API/Model/Data.swift; sourceTree = SOURCE_ROOT; };
-		ACBF7D14202F408500660123 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = WeatherWidget_API/Model/Extensions.swift; sourceTree = SOURCE_ROOT; };
+		ACBF7D13202F408500660123 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = WeatherWidget_API/Model/Constants.swift; sourceTree = SOURCE_ROOT; };
+		ACBF7D14202F408500660123 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "WeatherWidget_API/Supporting Files/Extensions.swift"; sourceTree = SOURCE_ROOT; };
 		B506E8804DFCF2FCC63DA479 /* Pods_WeatherWidget_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WeatherWidget_API.framework; path = "../Debug-iphonesimulator/Pods_WeatherWidget_API.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,24 +78,50 @@
 		AC05A137202710A100C5E135 /* WeatherWidget_API */ = {
 			isa = PBXGroup;
 			children = (
-				AC05A13F202710A200C5E135 /* Assets.xcassets */,
-				AC05A138202710A200C5E135 /* AppDelegate.swift */,
-				AC05A141202710A200C5E135 /* LaunchScreen.storyboard */,
+				AC7477FC2032ECC300F6EF6E /* Supporting Files */,
 				AC5FA90B2028EF6000EC9DF6 /* Model */,
 				AC05A13C202710A200C5E135 /* Main.storyboard */,
-				ACADE883202CE1D5008D59C4 /* ViewController.swift */,
-				AC05A144202710A200C5E135 /* Info.plist */,
+				AC505BDE2031EF1900842C56 /* View */,
+				AC0CDC192030C51500AAB836 /* Controller */,
 			);
 			path = WeatherWidget_API;
+			sourceTree = "<group>";
+		};
+		AC0CDC192030C51500AAB836 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AC0CDC172030BC4F00AAB836 /* Controller.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AC505BDE2031EF1900842C56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACADE883202CE1D5008D59C4 /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AC5FA90B2028EF6000EC9DF6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ACBF7D13202F408500660123 /* Data.swift */,
-				ACBF7D14202F408500660123 /* Extensions.swift */,
+				ACBF7D13202F408500660123 /* Constants.swift */,
+				AC505BDF2032046F00842C56 /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AC7477FC2032ECC300F6EF6E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC05A13F202710A200C5E135 /* Assets.xcassets */,
+				AC05A138202710A200C5E135 /* AppDelegate.swift */,
+				AC05A141202710A200C5E135 /* LaunchScreen.storyboard */,
+				ACBF7D14202F408500660123 /* Extensions.swift */,
+				AC05A144202710A200C5E135 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		F754F87B5AFCF7CCA4D5BF3B /* Frameworks */ = {
@@ -233,8 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0CDC182030BC5000AAB836 /* Controller.swift in Sources */,
 				ACBF7D16202F408500660123 /* Extensions.swift in Sources */,
-				ACBF7D15202F408500660123 /* Data.swift in Sources */,
+				ACBF7D15202F408500660123 /* Constants.swift in Sources */,
+				AC505BE02032046F00842C56 /* Model.swift in Sources */,
 				AC05A139202710A200C5E135 /* AppDelegate.swift in Sources */,
 				ACADE884202CE1D5008D59C4 /* ViewController.swift in Sources */,
 			);
@@ -376,7 +408,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JE5R4U2ZLM;
-				INFOPLIST_FILE = "$(SRCROOT)/WeatherWidget_API/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/WeatherWidget_API/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Artem.WeatherWidget-API";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -392,7 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JE5R4U2ZLM;
-				INFOPLIST_FILE = "$(SRCROOT)/WeatherWidget_API/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/WeatherWidget_API/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Artem.WeatherWidget-API";
 				PRODUCT_NAME = "$(TARGET_NAME)";
