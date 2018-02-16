@@ -13,6 +13,7 @@
 		AC05A140202710A200C5E135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC05A13F202710A200C5E135 /* Assets.xcassets */; };
 		AC05A143202710A200C5E135 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC05A141202710A200C5E135 /* LaunchScreen.storyboard */; };
 		AC0CDC182030BC5000AAB836 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0CDC172030BC4F00AAB836 /* Controller.swift */; };
+		AC4499E32035D3C7008C8494 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4499E22035D3C7008C8494 /* CoreLocation.framework */; };
 		AC505BE02032046F00842C56 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC505BDF2032046F00842C56 /* Model.swift */; };
 		ACADE884202CE1D5008D59C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADE883202CE1D5008D59C4 /* ViewController.swift */; };
 		ACBF7D15202F408500660123 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBF7D13202F408500660123 /* Constants.swift */; };
@@ -29,6 +30,7 @@
 		AC05A142202710A200C5E135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC05A144202710A200C5E135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC0CDC172030BC4F00AAB836 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		AC4499E22035D3C7008C8494 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AC505BDF2032046F00842C56 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		ACADE883202CE1D5008D59C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ACBF7D13202F408500660123 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = WeatherWidget_API/Model/Constants.swift; sourceTree = SOURCE_ROOT; };
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4499E32035D3C7008C8494 /* CoreLocation.framework in Frameworks */,
 				5EBD33C361C37739F5DCB6D3 /* Pods_WeatherWidget_API.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +130,7 @@
 		F754F87B5AFCF7CCA4D5BF3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AC4499E22035D3C7008C8494 /* CoreLocation.framework */,
 				B506E8804DFCF2FCC63DA479 /* Pods_WeatherWidget_API.framework */,
 			);
 			name = Frameworks;
