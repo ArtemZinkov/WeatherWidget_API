@@ -15,9 +15,10 @@
 		AC0CDC182030BC5000AAB836 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0CDC172030BC4F00AAB836 /* Controller.swift */; };
 		AC4499E32035D3C7008C8494 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4499E22035D3C7008C8494 /* CoreLocation.framework */; };
 		AC505BE02032046F00842C56 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC505BDF2032046F00842C56 /* Model.swift */; };
+		AC8FD77C2039AFB100ADF788 /* Double+subtracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FD77B2039AFB100ADF788 /* Double+subtracting.swift */; };
+		AC8FD7882039B80600ADF788 /* Int+Randomizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FD7872039B80600ADF788 /* Int+Randomizing.swift */; };
 		ACADE884202CE1D5008D59C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADE883202CE1D5008D59C4 /* ViewController.swift */; };
 		ACBF7D15202F408500660123 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBF7D13202F408500660123 /* Constants.swift */; };
-		ACBF7D16202F408500660123 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBF7D14202F408500660123 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +33,10 @@
 		AC0CDC172030BC4F00AAB836 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		AC4499E22035D3C7008C8494 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AC505BDF2032046F00842C56 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		AC8FD77B2039AFB100ADF788 /* Double+subtracting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+subtracting.swift"; sourceTree = "<group>"; };
+		AC8FD7872039B80600ADF788 /* Int+Randomizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Randomizing.swift"; sourceTree = "<group>"; };
 		ACADE883202CE1D5008D59C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ACBF7D13202F408500660123 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = WeatherWidget_API/Model/Constants.swift; sourceTree = SOURCE_ROOT; };
-		ACBF7D14202F408500660123 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "WeatherWidget_API/Supporting Files/Extensions.swift"; sourceTree = SOURCE_ROOT; };
 		B506E8804DFCF2FCC63DA479 /* Pods_WeatherWidget_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WeatherWidget_API.framework; path = "../Debug-iphonesimulator/Pods_WeatherWidget_API.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 		AC05A137202710A100C5E135 /* WeatherWidget_API */ = {
 			isa = PBXGroup;
 			children = (
+				AC8FD77A2039AE8C00ADF788 /* Extensions */,
 				AC7477FC2032ECC300F6EF6E /* Supporting Files */,
 				AC5FA90B2028EF6000EC9DF6 /* Model */,
 				AC05A13C202710A200C5E135 /* Main.storyboard */,
@@ -121,10 +124,18 @@
 				AC05A13F202710A200C5E135 /* Assets.xcassets */,
 				AC05A138202710A200C5E135 /* AppDelegate.swift */,
 				AC05A141202710A200C5E135 /* LaunchScreen.storyboard */,
-				ACBF7D14202F408500660123 /* Extensions.swift */,
 				AC05A144202710A200C5E135 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC8FD77A2039AE8C00ADF788 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC8FD7872039B80600ADF788 /* Int+Randomizing.swift */,
+				AC8FD77B2039AFB100ADF788 /* Double+subtracting.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F754F87B5AFCF7CCA4D5BF3B /* Frameworks */ = {
@@ -268,9 +279,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0CDC182030BC5000AAB836 /* Controller.swift in Sources */,
-				ACBF7D16202F408500660123 /* Extensions.swift in Sources */,
 				ACBF7D15202F408500660123 /* Constants.swift in Sources */,
 				AC505BE02032046F00842C56 /* Model.swift in Sources */,
+				AC8FD7882039B80600ADF788 /* Int+Randomizing.swift in Sources */,
+				AC8FD77C2039AFB100ADF788 /* Double+subtracting.swift in Sources */,
 				AC05A139202710A200C5E135 /* AppDelegate.swift in Sources */,
 				ACADE884202CE1D5008D59C4 /* ViewController.swift in Sources */,
 			);

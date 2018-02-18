@@ -10,12 +10,12 @@ import SwiftyJSON
 import Alamofire
 
 protocol WeatherProtocol {
-    func setWeather(from model:WeatherModel)
+    func setWeather(from model: WeatherModel)
 }
 
 class WeatherController:UIViewController {
     var weatherModel = WeatherModel()
-    var weatherView:WeatherProtocol!
+    var weatherView: WeatherProtocol!
     
     var json:JSON! {
         didSet {

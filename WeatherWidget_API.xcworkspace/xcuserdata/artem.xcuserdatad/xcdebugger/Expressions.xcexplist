@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "WeatherModel.getRequestAdress():Model.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Constants.APIAdress + &quot;?lat=&quot; + String(WeatherModel.currentLocation.lat) + &quot;&amp;lon=&quot; + String(WeatherModel.currentLocation.lon) + &quot;&amp;appid=&quot; + Constants.APIkeys[Constants.APIkeys.count.random()]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "TableViewController.doSomething():WeatherTableView.swift">
          <PersistentStrings>
             <PersistentString

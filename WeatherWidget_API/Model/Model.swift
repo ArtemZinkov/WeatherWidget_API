@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct WeatherModel {
+class WeatherModel {
     var location:String!
     var temperature:String!
     var currentWeather:String!
@@ -22,21 +22,21 @@ struct WeatherModel {
         }
     }
     
-    private mutating func setPlace(with text:String) {
+    private func setPlace(with text:String) {
         location = text
     }
     
-    private mutating func setDescription(with text:String) {
+    private func setDescription(with text:String) {
         currentWeather = text
     }
     
-    private mutating func setTemperatureLabel(with text: String) {
+    private func setTemperatureLabel(with text: String) {
         temperature = "Поточна температура: " + text + "℃"
     }
 
-    mutating func setModel(from json:JSON) {
+    func setModel(from json:JSON) {
         setPlace(with: json["name"].stringValue)
-        setTemperatureLabel(with: String(Double(Int(json["main"]["temp"].doubleValue.Subtract(Constants.KELVIN_CONSTANT)))))
+        setTemperatureLabel(with: String(Double(Int(json["main"]["temp"].doubleValue.subtract(Constants.KELVIN_CONSTANT)))))
         setDescription(with: getDescription(from: json))
     }
     
@@ -55,6 +55,6 @@ struct WeatherModel {
     }
     
     func getRequestAdress() -> String {
-        return Constants.APIAdress + "?lat=" + String(WeatherModel.currentLocation.lat) + "&lon=" + String(WeatherModel.currentLocation.lon) + "&appid=" + Constants.APIkeys[Constants.APIkeys.count.Random()]
+        return Constants.APIAdress + "?lat=" + String(WeatherModel.currentLocation.lat) + "&lon=" + String(WeatherModel.currentLocation.lon) + "&appid=" + Constants.APIkeys[Constants.APIkeys.count.random()]
     }
 }
