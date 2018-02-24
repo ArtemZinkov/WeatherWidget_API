@@ -13,11 +13,11 @@ protocol WeatherProtocol {
     func setWeather(from model: WeatherModel)
 }
 
-class WeatherController:UIViewController {
-    var weatherModel = WeatherModel()
+class WeatherController: UIViewController {
+    private var weatherModel = WeatherModel()
     var weatherView: WeatherProtocol!
     
-    var json:JSON! {
+    private var json:JSON! {
         didSet {
             weatherModel.setModel(from: json)
             weatherView.setWeather(from: weatherModel)
@@ -28,7 +28,7 @@ class WeatherController:UIViewController {
         setJSON(from: weatherModel.getRequestAdress())
     }
     
-    func setJSON(from string:String) {
+    private func setJSON(from string:String) {
         Alamofire.request(string).responseJSON { response in
             if let jsonValue = response.result.value {
                 DispatchQueue.main.async {

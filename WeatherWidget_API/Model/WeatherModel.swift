@@ -10,11 +10,12 @@ import Foundation
 import SwiftyJSON
 
 class WeatherModel {
-    var location:String!
-    var temperature:String!
-    var currentWeather:String!
+    var location: String!
+    var temperature: String!
+    var currentWeather: String!
+    let temperaturePrefix: String = "Поточна температура: "
     
-    static var currentLocation:(lon: Double, lat: Double) {
+    static var currentLocation:(longitude: Double, latitude: Double) {
         get {
             //        let coordinate = CLLocation.init().coordinate // не працюватиме методи делегата, інтерактивне вікно, менеджер
             //        return (coordinate.latitude, coordinate.longitude)
@@ -22,25 +23,25 @@ class WeatherModel {
         }
     }
     
-    private func setPlace(with text:String) {
+    private func setPlace(with text: String) {
         location = text
     }
     
-    private func setDescription(with text:String) {
+    private func setDescription(with text: String) {
         currentWeather = text
     }
     
     private func setTemperatureLabel(with text: String) {
-        temperature = "Поточна температура: " + text + "℃"
+        temperature = temperaturePrefix + text + "℃"
     }
 
-    func setModel(from json:JSON) {
+    func setModel(from json: JSON) {
         setPlace(with: json["name"].stringValue)
-        setTemperatureLabel(with: String(Double(Int(json["main"]["temp"].doubleValue.subtract(Constants.KELVIN_CONSTANT)))))
+        setTemperatureLabel(with: String(Double(Int(json["main"]["temp"].doubleValue.subtract(Constants.kelvinConstant)))))
         setDescription(with: getDescription(from: json))
     }
     
-    private func getDescription(from json:JSON) -> String {
+    private func getDescription(from json: JSON) -> String {
         var descriptionString = ""
         let jsonArray = json["weather"].arrayValue
         
@@ -55,6 +56,6 @@ class WeatherModel {
     }
     
     func getRequestAdress() -> String {
-        return Constants.APIAdress + "?lat=" + String(WeatherModel.currentLocation.lat) + "&lon=" + String(WeatherModel.currentLocation.lon) + "&appid=" + Constants.APIkeys[Constants.APIkeys.count.random()]
+        return Constants.apiAdress + "?lat=" + String(WeatherModel.currentLocation.latitude) + "&lon=" + String(WeatherModel.currentLocation.longitude) + "&appid=" + Constants.apiKeys[Constants.apiKeys.count.random()]
     }
 }
