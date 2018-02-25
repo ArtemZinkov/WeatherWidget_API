@@ -83,35 +83,35 @@
 			children = (
 				AC8FD77A2039AE8C00ADF788 /* Extensions */,
 				AC7477FC2032ECC300F6EF6E /* Supporting Files */,
-				AC5FA90B2028EF6000EC9DF6 /* Model */,
-				AC505BDE2031EF1900842C56 /* View */,
-				AC0CDC192030C51500AAB836 /* Controller */,
+				AC5FA90B2028EF6000EC9DF6 /* Models */,
+				AC505BDE2031EF1900842C56 /* Views */,
+				AC0CDC192030C51500AAB836 /* Controllers */,
 			);
 			path = WeatherWidget_API;
 			sourceTree = "<group>";
 		};
-		AC0CDC192030C51500AAB836 /* Controller */ = {
+		AC0CDC192030C51500AAB836 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				AC0CDC172030BC4F00AAB836 /* WeatherController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		AC505BDE2031EF1900842C56 /* View */ = {
+		AC505BDE2031EF1900842C56 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				ACADE883202CE1D5008D59C4 /* WeatherView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		AC5FA90B2028EF6000EC9DF6 /* Model */ = {
+		AC5FA90B2028EF6000EC9DF6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				AC505BDF2032046F00842C56 /* WeatherModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		AC7477FC2032ECC300F6EF6E /* Supporting Files */ = {

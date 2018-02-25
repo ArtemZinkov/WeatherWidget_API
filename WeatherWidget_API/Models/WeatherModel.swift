@@ -13,12 +13,11 @@ class WeatherModel {
     var location: String!
     var temperature: String!
     var currentWeather: String!
-    let temperaturePrefix: String = "Поточна температура: "
+    
+    let temperaturePrefix = "Поточна температура: "
     
     static var currentLocation:(longitude: Double, latitude: Double) {
         get {
-            //        let coordinate = CLLocation.init().coordinate // не працюватиме методи делегата, інтерактивне вікно, менеджер
-            //        return (coordinate.latitude, coordinate.longitude)
             return (30.59, 50.45)
         }
     }
