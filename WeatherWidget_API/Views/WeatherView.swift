@@ -16,7 +16,7 @@ class ViewController: UIViewController, WeatherProtocol {
     @IBOutlet private weak var temp: UILabel!
     @IBOutlet private weak var descr: UILabel!
     
-    var controller: WeatherController!
+    private var controller: WeatherController!
     
     override func viewDidLoad() {
         super.viewDidLoad()

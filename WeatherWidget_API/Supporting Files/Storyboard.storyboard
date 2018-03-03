@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Current weather-->
+        <!--Поточна погода-->
         <scene sceneID="ueK-ah-lYD">
             <objects>
                 <viewController id="vyg-kI-N8W" customClass="ViewController" customModule="WeatherWidget_API" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,7 +51,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qrf-se-OQD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Current weather" id="BHj-fC-aso"/>
+                    <tabBarItem key="tabBarItem" title="Поточна погода" id="BHj-fC-aso"/>
                     <navigationItem key="navigationItem" id="DOc-fT-r4A"/>
                     <connections>
                         <outlet property="descr" destination="oo1-vA-8tR" id="xQF-fw-U6O"/>
@@ -63,20 +63,20 @@
             </objects>
             <point key="canvasLocation" x="1535" y="-298"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Налаштування-->
         <scene sceneID="PVh-eX-0Rs">
             <objects>
-                <tableViewController id="0UE-H4-jvL" sceneMemberID="viewController">
+                <tableViewController id="0UE-H4-jvL" customClass="SettingsView" customModule="WeatherWidget_API" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FJU-bq-lHd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dLb-9o-bWj">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" rowHeight="117" id="dLb-9o-bWj" customClass="SettingsViewCell" customModule="WeatherWidget_API" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="117"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dLb-9o-bWj" id="AmT-M8-cet">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="116.66666666666667"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -86,11 +86,11 @@
                             <outlet property="delegate" destination="0UE-H4-jvL" id="zLd-Lb-jmN"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" id="4F9-z1-kuK"/>
+                    <tabBarItem key="tabBarItem" title="Налаштування" id="4F9-z1-kuK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dx7-Ci-1ox" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1534" y="-981"/>
+            <point key="canvasLocation" x="1533.5999999999999" y="-981.2807881773399"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HWu-eF-WdO">
@@ -98,6 +98,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yL2-Uh-4J6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IHp-MD-K7Q">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
