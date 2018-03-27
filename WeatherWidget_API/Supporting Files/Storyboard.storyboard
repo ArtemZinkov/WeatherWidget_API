@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yL2-Uh-4J6">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Карта-->
+        <scene sceneID="OTW-ql-5vT">
+            <objects>
+                <viewController id="ySm-0t-Ggf" customClass="MapView" customModule="WeatherWidget_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zfe-uB-LaB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="62O-II-tWl">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ySm-0t-Ggf" id="QXJ-DZ-T2C"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fq5-q5-39j"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Карта" id="uDP-DE-faX"/>
+                    <connections>
+                        <outlet property="mapView" destination="62O-II-tWl" id="7HK-kG-2OG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ubB-7D-mMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1533.5999999999999" y="-960.59113300492618"/>
+        </scene>
+        <!--Стан погоди-->
+        <scene sceneID="ueK-ah-lYD">
+            <objects>
+                <viewController id="vyg-kI-N8W" customClass="WeatherView" customModule="WeatherWidget_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jc4-pw-QBh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ij5-h2-sfi" userLabel="Labels">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zh2-Ej-b3X">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="243"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyP-N8-QUF">
+                                        <rect key="frame" x="0.0" y="243" width="375" height="243"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oo1-vA-8tR">
+                                        <rect key="frame" x="0.0" y="486" width="375" height="243"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qrf-se-OQD" firstAttribute="bottom" secondItem="Ij5-h2-sfi" secondAttribute="bottom" symbolic="YES" id="79T-KO-ott"/>
+                            <constraint firstItem="qrf-se-OQD" firstAttribute="trailing" secondItem="Ij5-h2-sfi" secondAttribute="trailing" symbolic="YES" id="btq-nV-OM7"/>
+                            <constraint firstItem="Ij5-h2-sfi" firstAttribute="top" secondItem="Jc4-pw-QBh" secondAttribute="top" id="mJx-25-ZYq"/>
+                            <constraint firstItem="Ij5-h2-sfi" firstAttribute="leading" secondItem="qrf-se-OQD" secondAttribute="leading" id="v1X-ya-nRn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qrf-se-OQD"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Стан погоди" id="BHj-fC-aso"/>
+                    <navigationItem key="navigationItem" id="DOc-fT-r4A"/>
+                    <connections>
+                        <outlet property="descr" destination="oo1-vA-8tR" id="xQF-fw-U6O"/>
+                        <outlet property="place" destination="Zh2-Ej-b3X" id="hg6-Av-Hco"/>
+                        <outlet property="temp" destination="nyP-N8-QUF" id="FYI-tN-VPx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9b-L1-LIT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1535" y="-298"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="HWu-eF-WdO">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yL2-Uh-4J6" customClass="TabBarController" customModule="WeatherWidget_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IHp-MD-K7Q">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vyg-kI-N8W" kind="relationship" relationship="viewControllers" id="MVM-1J-ezq"/>
+                        <segue destination="ySm-0t-Ggf" kind="relationship" relationship="viewControllers" id="f5V-SW-fdl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XLF-AZ-POK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="723.20000000000005" y="-297.78325123152712"/>
+        </scene>
+    </scenes>
+</document>

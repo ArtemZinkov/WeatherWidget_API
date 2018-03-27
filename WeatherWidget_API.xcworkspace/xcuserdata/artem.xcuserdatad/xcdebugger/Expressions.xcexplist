@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "static WeatherModel.currentLocation.getter:WeatherModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSDictionary(contentsOfFile: path)">
+            </PersistentString>
+            <PersistentString
+               value = "data[&quot;longitude&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.SetTemperatureLabel(with:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "temp.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SettingsView.tableView(_:cellForRowAt:):SettingsView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SettingsView.tableView(_:didSelectRowAt:):SettingsView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TableViewController.doSomething():WeatherTableView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentLocation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WeatherModel.getRequestAdress():Model.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Constants.APIAdress + &quot;?lat=&quot; + String(WeatherModel.currentLocation.lat) + &quot;&amp;lon=&quot; + String(WeatherModel.currentLocation.lon) + &quot;&amp;appid=&quot; + Constants.APIkeys[Constants.APIkeys.count.random()]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static PListSimplifier.loadPropertyList():WeatherModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "plistURL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
