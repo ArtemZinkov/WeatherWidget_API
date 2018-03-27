@@ -10,10 +10,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Поточна погода-->
+        <!--Карта-->
+        <scene sceneID="OTW-ql-5vT">
+            <objects>
+                <viewController id="ySm-0t-Ggf" customClass="MapView" customModule="WeatherWidget_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zfe-uB-LaB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="62O-II-tWl">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ySm-0t-Ggf" id="QXJ-DZ-T2C"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fq5-q5-39j"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Карта" id="uDP-DE-faX"/>
+                    <connections>
+                        <outlet property="mapView" destination="62O-II-tWl" id="7HK-kG-2OG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ubB-7D-mMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1533.5999999999999" y="-960.59113300492618"/>
+        </scene>
+        <!--Стан погоди-->
         <scene sceneID="ueK-ah-lYD">
             <objects>
-                <viewController id="vyg-kI-N8W" customClass="ViewController" customModule="WeatherWidget_API" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vyg-kI-N8W" customClass="WeatherView" customModule="WeatherWidget_API" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jc4-pw-QBh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +79,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qrf-se-OQD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Поточна погода" id="BHj-fC-aso"/>
+                    <tabBarItem key="tabBarItem" title="Стан погоди" id="BHj-fC-aso"/>
                     <navigationItem key="navigationItem" id="DOc-fT-r4A"/>
                     <connections>
                         <outlet property="descr" destination="oo1-vA-8tR" id="xQF-fw-U6O"/>
@@ -63,39 +91,10 @@
             </objects>
             <point key="canvasLocation" x="1535" y="-298"/>
         </scene>
-        <!--Налаштування-->
-        <scene sceneID="PVh-eX-0Rs">
-            <objects>
-                <tableViewController id="0UE-H4-jvL" customClass="SettingsView" customModule="WeatherWidget_API" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FJU-bq-lHd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" rowHeight="117" id="dLb-9o-bWj" customClass="SettingsViewCell" customModule="WeatherWidget_API" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="117"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dLb-9o-bWj" id="AmT-M8-cet">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="116.66666666666667"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="0UE-H4-jvL" id="bkI-bo-grl"/>
-                            <outlet property="delegate" destination="0UE-H4-jvL" id="zLd-Lb-jmN"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Налаштування" id="4F9-z1-kuK"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dx7-Ci-1ox" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1533.5999999999999" y="-981.2807881773399"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HWu-eF-WdO">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yL2-Uh-4J6" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yL2-Uh-4J6" customClass="TabBarController" customModule="WeatherWidget_API" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IHp-MD-K7Q">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -104,7 +103,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="vyg-kI-N8W" kind="relationship" relationship="viewControllers" id="MVM-1J-ezq"/>
-                        <segue destination="0UE-H4-jvL" kind="relationship" relationship="viewControllers" id="zY1-uK-BQx"/>
+                        <segue destination="ySm-0t-Ggf" kind="relationship" relationship="viewControllers" id="f5V-SW-fdl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XLF-AZ-POK" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController, WeatherProtocol {
+class WeatherView: UIViewController, WeatherProtocol {
 
     @IBOutlet private weak var place: UILabel!
     @IBOutlet private weak var temp: UILabel!
@@ -22,9 +22,13 @@ class ViewController: UIViewController, WeatherProtocol {
         super.viewDidLoad()
         controller = WeatherController()
         controller.weatherView = self
-        controller.initiate()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        controller.initiate()
+    }
+    
     private func setTemperatureLabel(with text: String) {
         temp.text = text
     }
@@ -37,16 +41,16 @@ class ViewController: UIViewController, WeatherProtocol {
         descr.text = text
     }
     
+    func clearView() {
+        temp.text = ""
+        place.text = ""
+        descr.text = ""
+    }
+    
     func setWeather(from object: WeatherModel) {
         setTemperatureLabel(with: object.temperature)
         setPlace(with: object.location)
         setDescription(with: object.currentWeather)
     }
 }
-
-
-
-
-
-
 

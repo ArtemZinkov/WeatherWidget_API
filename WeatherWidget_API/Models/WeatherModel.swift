@@ -8,18 +8,58 @@
 
 import Foundation
 import SwiftyJSON
+import CoreData
 
 class WeatherModel {
     var location: String!
     var temperature: String!
     var currentWeather: String!
     
+    private static var managedObject = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private var coordinatesArray = [Coordinates]()
+    private static var coordinates: (latitude: Double, longitude: Double)!
+
     let temperaturePrefix = "Поточна температура: "
     
-    static var currentLocation:(longitude: Double, latitude: Double) {
+    static var currentLocation:(latitude: Double, longitude: Double) {
         get {
-            return (30.59, 50.45)
+            if let coordinates = WeatherModel.coordinates {
+                return coordinates
+            } else {
+                return (0.0, 0.0)
+            }
         }
+    }
+    
+    func fetchDataFromCoreData() {
+        
+        let coordinatesRequest: NSFetchRequest<Coordinates> = Coordinates.fetchRequest()
+        do {
+            try coordinatesArray = WeatherModel.managedObject.fetch(coordinatesRequest)
+            print(coordinatesArray.count)
+            if coordinatesArray.count > 0 {
+                let lastEnteredCoordinates = coordinatesArray[coordinatesArray.count - 1]
+                coordinatesArray.removeAll()
+                coordinatesArray.append(lastEnteredCoordinates)
+                WeatherModel.coordinates = (latitude: lastEnteredCoordinates.latitude,
+                                            longitude: lastEnteredCoordinates.longitude)
+            } else {
+                WeatherModel.coordinates = (latitude: 30.59,
+                                            longitude: 50.45)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+// WRONG cause we can't write Data in files that are in the Bundle
+//        if let path = Bundle.main.path(forResource: "Data", ofType: "plist") {
+//            do {
+//                let data = try Data(contentsOf: URL(fileURLWithPath: path))
+//                WeatherModel.dict = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [String:Double]
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
     }
     
     private func setPlace(with text: String) {
@@ -56,5 +96,20 @@ class WeatherModel {
     
     func getRequestAdress() -> String {
         return Constants.apiAdress + "?lat=" + String(WeatherModel.currentLocation.latitude) + "&lon=" + String(WeatherModel.currentLocation.longitude) + "&appid=" + Constants.apiKeys[Constants.apiKeys.count.random()]
+    }
+    
+    static func updateData(with newCoordinates: (longitude: Double, latitude: Double)) {
+        
+        let coordinates = Coordinates(context: managedObject)
+        coordinates.latitude = newCoordinates.latitude
+        coordinates.longitude = newCoordinates.longitude
+        
+        do {
+            try managedObject.save()
+            WeatherModel.coordinates = newCoordinates
+        } catch {
+            print(error.localizedDescription)
+        }
+        
     }
 }
