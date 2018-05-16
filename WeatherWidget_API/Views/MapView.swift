@@ -10,13 +10,14 @@ import UIKit
 import MapKit
 import CoreData
 
-class MapView: UIViewController, UIGestureRecognizerDelegate {
+class MapView: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelegate {
 
-    @IBOutlet weak var mapView: MKMapView!
+    private var mapView: MKMapView!
     private var coordinatesToControl: (latitude: Double, longitude: Double)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         coordinatesToControl = WeatherModel.currentLocation
         
         let annotation = MKPointAnnotation()
@@ -27,6 +28,17 @@ class MapView: UIViewController, UIGestureRecognizerDelegate {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MapView.handleTap(_:)))
         gestureRecognizer.delegate = self
         mapView.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    private func setupUI() {
+        mapView = MKMapView(frame: view.bounds)
+        view.backgroundColor = .white
+        view.addSubview(mapView)
+        mapView.delegate = self
+        mapView.topAnchor.constraint(equalTo: view.topAnchor)
+        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        mapView.leftAnchor.constraint(equalTo: view.leftAnchor)
+        mapView.rightAnchor.constraint(equalTo: view.rightAnchor)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

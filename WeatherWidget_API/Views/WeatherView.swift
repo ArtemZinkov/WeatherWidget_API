@@ -12,14 +12,15 @@ import SwiftyJSON
 
 class WeatherView: UIViewController, WeatherProtocol {
 
-    @IBOutlet private weak var place: UILabel!
-    @IBOutlet private weak var temp: UILabel!
-    @IBOutlet private weak var descr: UILabel!
-    
+    private var place: UILabel!
+    private var temp: UILabel!
+    private var descr: UILabel!
+
     private var controller: WeatherController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         controller = WeatherController()
         controller.weatherView = self
     }
@@ -27,6 +28,32 @@ class WeatherView: UIViewController, WeatherProtocol {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         controller.initiate()
+    }
+    
+    private func setupUI() {
+        place = UILabel(frame: CGRect.zero)
+        temp = UILabel(frame: CGRect.zero)
+        descr = UILabel(frame: CGRect.zero)
+        
+        place.textAlignment = .center
+        temp.textAlignment = .center
+        descr.textAlignment = .center
+
+        view.backgroundColor = .white
+
+        let stackView = UIStackView(frame: view.bounds)
+        stackView.addArrangedSubview(place)
+        stackView.addArrangedSubview(temp)
+        stackView.addArrangedSubview(descr)
+        stackView.distribution = .fillEqually
+        stackView.axis = .vertical
+        
+        stackView.topAnchor.constraint(equalTo: view.topAnchor)
+        stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        stackView.leftAnchor.constraint(equalTo: view.leftAnchor)
+        stackView.rightAnchor.constraint(equalTo: view.rightAnchor)
+
+        view.addSubview(stackView)
     }
     
     private func setTemperatureLabel(with text: String) {

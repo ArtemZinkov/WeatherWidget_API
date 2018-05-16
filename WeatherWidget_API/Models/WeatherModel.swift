@@ -50,16 +50,6 @@ class WeatherModel {
         } catch {
             print(error.localizedDescription)
         }
-        
-// WRONG cause we can't write Data in files that are in the Bundle
-//        if let path = Bundle.main.path(forResource: "Data", ofType: "plist") {
-//            do {
-//                let data = try Data(contentsOf: URL(fileURLWithPath: path))
-//                WeatherModel.dict = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [String:Double]
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//        }
     }
     
     private func setPlace(with text: String) {

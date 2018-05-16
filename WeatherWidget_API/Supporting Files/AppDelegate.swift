@@ -15,6 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = .white
+        window?.makeKeyAndVisible()
+        let tabBarController = UITabBarController()
+        tabBarController.setViewControllers([WeatherView(), MapView()], animated: true)
+        tabBarController.viewControllers![0].tabBarItem.title = "Стан погоди"
+        tabBarController.viewControllers![1].tabBarItem.title = "Карта"
+
+        window?.rootViewController = tabBarController
+        
         return true
     }
 
